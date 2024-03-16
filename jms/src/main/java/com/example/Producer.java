@@ -35,6 +35,8 @@ public class Producer implements IFRabiitMQ {
             channel.basicPublish("", GETTING_QUEUE, null, message.getBytes());
             System.out.println("Sent message: " + message);
 
+        } finally {
+            System.out.println("Close connection");
         }
 
     }
